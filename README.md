@@ -17,9 +17,9 @@ Since Angular is already can be considered MVVM framework (template = View, comp
 
 ### View
 
-In MVVM² _View_ is a component itself. This means that HTML template, component class and styles represent one _View_ entity.
+In MVVM² _View_ is an Angular component. This means that HTML template, component class and component styles represent one _View_ entity.
 
-Imagine we want to create Todo app. Let's create some _Views_:
+Imagine we want to create todo app. Let's create a _View_ to show one todo:
 
 ```typescript
 // @types/todo.ts
@@ -32,25 +32,39 @@ export type Todo = Readonly<{
 // @views/todo/todo.component.ts
 @Component({
     selector: 'todo',
-    template: `<div [class.completed]="todo.isCompleted">{{todo.name}}</div>`
+    template: `<div [class.completed]="todo.isCompleted">{{todo.name}}</div>`,
 })
 export class TodoComponent {
     @Input() todo: Todo;
 }
 ```
 
+And we also need another _View_ to show todo list:
+
 ```typescript
-@Component()
-export class TodoList {}
+@Component({
+    selector: 'todo-list',
+    template: `
+        <ul>
+            <li *ngFor="let todo of ">
+                <todo [todo]="todo"></todo>
+            </li>
+        </ul>
+    `,
+    providers: [TodoViewModel]
+})
+export class TodoList {
+
+}
 ```
 
 ### Model
 
 _Model_ — is a service, that is responsible to get and update data from external and internal sources, like:
 
-* Services, that will perform API calls to get and update data from the server
-* Services, that use `LocalStorage`, `SessionStorage` or Cookies to store the data
-* Other internal services on top of services described above (e.g. to get information about user globally you may use `UserService`)
+* Services, that will perform API calls to get and update data from the server.
+* Services, that use `LocalStorage`, `SessionStorage` or cookies to store the data.
+* Other internal services on top of services described above (e.g. to get information about user globally you may use `UserService`).
 
 Let's create a _Model_:
 
