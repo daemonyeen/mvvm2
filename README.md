@@ -14,12 +14,8 @@ Here's some benefits:
 
 Since Angular is already can be considered MVVM framework (template = View, component class = View Model, services = Model), we decided to name MVVM² this way, because it adds MVVM pattern on top of Angular. Just like in regular MVVM, we have _View_, _View Model_ and _Model_, but this time it will mean different things.
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/daemonyeen/mvvm2/master/images/mvvm2-diagram-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/daemonyeen/mvvm2/master/images/mvvm2-diagram.svg">
-  <img alt="MVVM² diagram" src="https://raw.githubusercontent.com/daemonyeen/mvvm2/master/images/mvvm2-diagram.svg">
-</picture>
-
+<img alt="MVVM²" src="https://raw.githubusercontent.com/daemonyeen/mvvm2/master/images/mvvm2-diagram.svg
+">
 ### View
 
 In MVVM² _View_ is an Angular component. This means that HTML template, component class and component styles represent one _View_ entity.
