@@ -12,9 +12,18 @@ Here's some benefits:
 
 ## Core concepts of MVVM²
 
-Since Angular is already can be considered MVVM framework (template = View, component class = View Model, services = Model), we decided to name MVVM² this way, because it adds MVVM pattern on top of Angular. Just like in regular MVVM, we have _View_, _View Model_ and _Model_, but this time it will mean different things.
+Since Angular can already be considered an MVVM framework, we chose to call MVVM² that way because it adds another MVVM pattern on top of Angular. As in regular MVVM, we have _View_, _View Model_ and _Model_, but this time they will mean different things.
+
+The following diagram shows the basic structure of the MVVM² pattern:
+
+* Green blocks refer to the _Model_
+* The red blocks are associated with the _View Model_.
+* Blue blocks are related to _View_
 
 <img alt="MVVM² diagram" src="https://raw.githubusercontent.com/daemonyeen/mvvm2/master/images/mvvm2-diagram.svg">
+
+
+MVVM² is essentially an MVVM pattern within another. The first MVVM pattern is the Angular component and its services. The following MVVM pattern separates the business logic from the UI logic.
 
 ### View
 
